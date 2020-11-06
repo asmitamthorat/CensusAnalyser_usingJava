@@ -29,7 +29,6 @@ public class CensusAnalyser {
 
 
     public int loadIndiaStateCodeData(String csvFilePath) throws CensusAnalyserException {
-
         try(Reader reader = Files.newBufferedReader(Paths.get(csvFilePath))){
             ICSVBuilder  csvBuilder=CSVBuilderFactory.createCSVBuilder();
             Iterator<IndiaStateCodeCSV> censusCSVIterator=csvBuilder.getCSVFileIterator(reader,IndiaStateCodeCSV.class);

@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-11-06T14:06:56" hostname="DESKTOP-RIBMOST" time="0.431">
+<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-06T14:37:14" hostname="DESKTOP-RIBMOST" time="0.032">
   <properties/>
-  <testcase name="givenStateCensusFile_withWrongPath_shouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.008"/>
-  <testcase name="givenRightStateCodeFile_withDelimiter_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.071"/>
-  <testcase name="givenRightStateCode_UnableToParse_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.001"/>
-  <testcase name="givenSStateCodeFile_withWrongPath_shouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.0"/>
-  <testcase name="givenRightStateCodeFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.003"/>
-  <testcase name="givenRightCensusFile_withDelimiterIssue_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.122"/>
-  <testcase name="givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.124"/>
-  <testcase name="givenStateCensusFile_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.089"/>
-  <testcase name="givenRightCensusFile_UnableToParse_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.001"/>
-  <testcase name="givenRightCensusFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.009"/>
+  <testcase name="givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.032"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
