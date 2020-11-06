@@ -1,0 +1,78 @@
+package com.bridgelabz;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import java.io.IOException;
+import java.rmi.server.ExportException;
+
+public class CensusAnalyzerTest {
+    private static final String  STATECENSUS_CSVFILE="./src/test/resources/IndiaStateCensusData.csv";
+    private static final String  STATECODES_CSVFILE="./src/test/resources/IndiaStateCode.csv";
+    private static final String  WRONG_FILE="C:\\Users\\com\\StateCode";
+    private static final String  STATECODES_CSVFILE_withDELIMITOR="./src/test/resources/IndiaStateCensusData_delimitorIssue.csv";
+    private static final String  STATECODES_CSVFILEIndiaState_CensusData_unableToParse="./src/test/resources/IndiaStateCensusData_unableToParse.csv";
+
+
+
+    @Test
+    public void givenStateCodesCsvFile_IfHasCorrectNumberOFRecord_shouldReturnTrue() throws IOException, CensusAnalyserException {
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaCensusData(STATECENSUS_CSVFILE);
+           // System.out.println(numOfRecords);
+            Assert.assertEquals(29, numOfRecords);
+
+    }
+
+    @Test
+    public void givenStateCensusFile_withWrongPath_shouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaCensusData(WRONG_FILE);
+        }catch (CensusAnalyserException  e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM,e.type);
+        }
+    }
+
+
+    @Test
+    public void givenRightCensusFile_withDIlimiter_whenReturnWrongOutput_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaCensusData(STATECODES_CSVFILE_withDELIMITOR);
+        }catch (CensusAnalyserException  e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.DELIMITER_ISSUE,e.type);
+        }
+
+    }
+
+
+
+    @Test
+    public void givenRightCensusFile_UnableToParse_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaCensusData(WRONG_FILE);
+        }catch (CensusAnalyserException  e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM,e.type);
+        }
+
+    }
+
+    @Test
+    public void givenRightCensusFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaCensusData(STATECODES_CSVFILE_withDELIMITOR);
+        }catch (CensusAnalyserException  e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.DELIMITER_ISSUE,e.type);
+        }
+
+    }
+
+    //=--------------------------
+
+
+
+}
