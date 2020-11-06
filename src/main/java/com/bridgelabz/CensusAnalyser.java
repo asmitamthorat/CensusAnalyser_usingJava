@@ -22,14 +22,14 @@ public class CensusAnalyser {
             int num_of_entries= (int) StreamSupport.stream(csvIterator.spliterator(),false).count();
             return num_of_entries;
 
-        }catch(IOException e){
-            throw new CensusAnalyserException(e.getMessage(),CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+        }catch(IOException ioException){
+            throw new CensusAnalyserException(ioException.getMessage(),CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
 
-        }catch (IllegalStateException e){
-            throw new CensusAnalyserException(e.getMessage(),CensusAnalyserException.ExceptionType.UNABLE_TO_PARSE);
+        }catch (IllegalStateException illegalStateException){
+            throw new CensusAnalyserException(illegalStateException.getMessage(),CensusAnalyserException.ExceptionType.UNABLE_TO_PARSE);
 
-        }catch (RuntimeException e){
-            throw new CensusAnalyserException(e.getMessage(),CensusAnalyserException.ExceptionType.DELIMITER_ISSUE);
+        }catch (RuntimeException runtimeException){
+            throw new CensusAnalyserException(runtimeException.getMessage(),CensusAnalyserException.ExceptionType.DELIMITER_ISSUE);
         }
     }
 
