@@ -18,7 +18,6 @@ public class CensusAnalyzerTest {
     public void givenStateCensusFile_IfHasCorrectNumberOFRecord_shouldReturnTrue() throws IOException, CensusAnalyserException {
             CensusAnalyser censusAnalyser=new CensusAnalyser();
             int numOfRecords = censusAnalyser.loadIndiaCensusData(STATECENSUS_CSVFILE);
-           // System.out.println(numOfRecords);
             Assert.assertEquals(29, numOfRecords);
     }
 
