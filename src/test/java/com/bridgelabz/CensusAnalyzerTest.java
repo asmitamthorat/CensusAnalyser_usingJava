@@ -67,7 +67,7 @@ public class CensusAnalyzerTest {
 
     //=--------------------------
 
-/*
+
     @Test
     public void givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue() throws IOException, CensusAnalyserException {
         CensusAnalyser censusAnalyser=new CensusAnalyser();
@@ -76,12 +76,6 @@ public class CensusAnalyzerTest {
         Assert.assertEquals(37, numOfRecords);
 
     }
-
-
-
-
- */
-
 
 
     @Test

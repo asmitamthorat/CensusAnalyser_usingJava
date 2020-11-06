@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-06T05:37:45" hostname="DESKTOP-RIBMOST" time="0.943">
+<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-06T06:29:30" hostname="DESKTOP-RIBMOST" time="0.234">
   <properties/>
-  <testcase name="givenStateCensusFile_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.943"/>
+  <testcase name="givenStateCensusFile_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.234"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
