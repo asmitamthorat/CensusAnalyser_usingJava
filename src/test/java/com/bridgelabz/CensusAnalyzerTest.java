@@ -66,6 +66,65 @@ public class CensusAnalyzerTest {
 
     //=--------------------------
 
+/*
+    @Test
+    public void givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue() throws IOException, CensusAnalyserException {
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+        int numOfRecords = censusAnalyser.loadIndiaStateCodeData(STATECODES_CSVFILE);
+        // System.out.println(numOfRecords);
+        Assert.assertEquals(37, numOfRecords);
+
+    }
+
+
+ */
+
+    @Test
+    public void givenSStateCodeFile_withWrongPath_shouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(WRONG_FILE);
+        }catch (CensusAnalyserException  censusAnalyserException) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM,censusAnalyserException.type);
+        }
+    }
+
+
+    @Test
+    public void givenRightStateCodeFile_withDelimiter_whenReturnWrongOutput_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(STATECODES_CSVFILE_withDELIMITOR);
+        }catch (CensusAnalyserException  censusAnalyserException) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.DELIMITER_ISSUE,censusAnalyserException.type);
+        }
+
+    }
+
+
+
+    @Test
+    public void givenRightStateCode_UnableToParse_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(WRONG_FILE);
+        }catch (CensusAnalyserException  censusAnalyserException) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM,censusAnalyserException.type);
+        }
+
+    }
+
+    @Test
+    public void givenRightStateCodeFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException(){
+        try{
+            CensusAnalyser censusAnalyser=new CensusAnalyser();
+            int numOfRecords = censusAnalyser.loadIndiaStateCodeData(STATECODES_CSVFILE_withDELIMITOR);
+        }catch (CensusAnalyserException  censusAnalyserException) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.DELIMITER_ISSUE,censusAnalyserException.type);
+        }
+
+    }
+
 
 
 }

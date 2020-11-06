@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-06T02:47:55" hostname="DESKTOP-RIBMOST" time="0.342">
+<testsuite name="com.bridgelabz.CensusAnalyzerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-06T03:23:28" hostname="DESKTOP-RIBMOST" time="0.072">
   <properties/>
-  <testcase name="givenStateCensusFile_withWrongPath_shouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.007"/>
-  <testcase name="givenRightCensusFile_withDelimiterIssue_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.163"/>
-  <testcase name="givenStateCensusFile_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzerTest" time="0.137"/>
-  <testcase name="givenRightCensusFile_UnableToParse_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.001"/>
-  <testcase name="givenRightCensusFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.026"/>
+  <testcase name="givenRightStateCodeFile_withNoHeader_whenReturnWrongOutput_ShouldThrowException" classname="com.bridgelabz.CensusAnalyzerTest" time="0.072"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
