@@ -74,14 +74,47 @@ public class CensusAnalyzerTest {
     }
 
 
+    //sign should be changed
+    @Test
+    public void givenIndianCensusData_WhenSortedOnSatePopulation_ShouldReturnSortedResult() throws CensusAnalyserException {
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+        String sortedCensusData= censusAnalyser.getPopulationWiseSortedCensusData(INDIA_CENSUS_CSVFILE);
+        IndiaCensusCSV[] censusCSV=new Gson().fromJson(sortedCensusData,IndiaCensusCSV[].class);
+        Assert.assertEquals(1.99812341E8 ,censusCSV[0].population,0.00001);
+    }
+//sign should be changed
+    @Test
+    public void givenIndianCensusData_WhenSortedOnSateArea_ShouldReturnSortedResult() throws CensusAnalyserException {
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+        String sortedCensusData= censusAnalyser.getStateAreaWiseSortedCensusData(INDIA_CENSUS_CSVFILE);
+        IndiaCensusCSV[] censusCSV=new Gson().fromJson(sortedCensusData,IndiaCensusCSV[].class);
+        Assert.assertEquals(6.8621012E7 ,censusCSV[0].population,0.00001);
+    }
+
+    @Test
+    public void givenIndianCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult() throws CensusAnalyserException {
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+        String sortedCensusData= censusAnalyser.getPopulationDensityWiseSortedCensusData(INDIA_CENSUS_CSVFILE);
+        IndiaCensusCSV[] censusCSV=new Gson().fromJson(sortedCensusData,IndiaCensusCSV[].class);
+        Assert.assertEquals(52.0 ,censusCSV[0].densityPerSqKm,0.000001);
+    }
+
+
     //--------------------------
+
+    @Test
+    public void givenIndianStateCodeData_WhenSorted_ShouldReturnSortedResult() throws CensusAnalyserException{
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+        String sortedStateCodeData = censusAnalyser.getStateCodeWise_SortedCensusData(STATE_CODES_CSVFILE);
+        IndiaStateCodeCSV[] censusCSV=new Gson().fromJson(sortedStateCodeData,IndiaStateCodeCSV[].class);
+        Assert.assertEquals("AN" ,censusCSV[0].StateCode);
+    }
 
 
     @Test
     public void givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue() throws IOException, CensusAnalyserException {
         CensusAnalyser censusAnalyser=new CensusAnalyser();
         int numOfRecords = censusAnalyser.loadIndiaStateCodeData(STATE_CODES_CSVFILE);
-        // System.out.println(numOfRecords);
         Assert.assertEquals(37, numOfRecords);
 
     }

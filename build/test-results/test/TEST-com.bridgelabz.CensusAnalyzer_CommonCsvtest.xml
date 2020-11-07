@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.CensusAnalyzer_CommonCsvtest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-07T07:06:04" hostname="DESKTOP-RIBMOST" time="0.026">
+  <properties/>
+  <testcase name="givenStateCode_IfHasCorrectNumberOFRecord_shouldReturnTrue" classname="com.bridgelabz.CensusAnalyzer_CommonCsvtest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
