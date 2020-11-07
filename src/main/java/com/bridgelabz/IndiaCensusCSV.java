@@ -2,17 +2,18 @@ package com.bridgelabz;
 import com.opencsv.bean.CsvBindByName;
 public class IndiaCensusCSV {
 
+    //public String State;
     @CsvBindByName(column = "State")
-    private String stateName;
+    public String stateName;
 
     @CsvBindByName(column = "Population",required = true)
-    private double population;
+    public double population;
 
     @CsvBindByName(column = "AreaInSqKm")
-    private double areaInSqKm;
+    public double areaInSqKm;
 
     @CsvBindByName(column = "DensityPerSqKm", required = true)
-    private double densityPerSqKm;
+    public double densityPerSqKm;
 
     @Override
     public String toString() {

@@ -1,4 +1,5 @@
 package com.bridgelabz;
+import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 import java.io.IOException;
@@ -63,6 +64,17 @@ public class CensusAnalyzerTest {
         }
 
     }
+
+    @Test
+    public void givenIndianCensusData_WhenSortedOnState_ShouldReturnSortedResult() throws CensusAnalyserException {
+        CensusAnalyser censusAnalyser=new CensusAnalyser();
+       String sortedCensusData= censusAnalyser.getStateWiseSortedCensusData(INDIA_CENSUS_CSVFILE);
+       IndiaCensusCSV[] censusCSV=new Gson().fromJson(sortedCensusData,IndiaCensusCSV[].class);
+        Assert.assertEquals("Andhra Pradesh" ,censusCSV[0].stateName);
+    }
+
+
+    //--------------------------
 
 
     @Test
